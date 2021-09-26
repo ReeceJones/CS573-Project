@@ -1,0 +1,318 @@
+%%
+%% This is file `sample-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigconf]{acmart}
+%% NOTE that a single column version may required for 
+%% submission and peer review. This can be done by changing
+%% the \doucmentclass[...]{acmart} in this template to 
+%% \documentclass[manuscript,screen]{acmart}
+%% 
+%% To ensure 100% compatibility, please check the white list of
+%% approved LaTeX packages to be used with the Master Article Template at
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
+%% before creating your document. The white list page provides 
+%% information on how to submit additional LaTeX packages for 
+%% review and adoption.
+%% Fonts used in the template cannot be substituted; margin 
+%% adjustments are not allowed.
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+%\setcopyright{acmcopyright}
+%\copyrightyear{2021}
+%\acmYear{2021}
+%\acmDOI{10.1145/1122445.1122456}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+%\acmConference[CS573 Fall '21]{CS573 Fall '21: Data Mining}{August 23--December 08, 2021}{Purdue University, IN}
+%\acmBooktitle{CS573 Fall '21: Final Project Proposal,
+%  September 26, 2021, Purdue University, IN}
+%\acmPrice{15.00}
+%\acmISBN{978-1-4503-XXXX-X/18/06}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{%
+  Project Proposal \\
+  \large CS 573 - Data Mining - Fall 2021}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Reece Jones}
+\affiliation{%
+    \institution{Purdue University}
+    \country{United States}}
+\email{jone1926@purdue.edu}
+
+\author{Eli Silkov}
+\affiliation{%
+    \institution{Purdue University}
+    \country{United States}}
+\email{esilkov@purdue.edu}
+
+\author{Nathan Merz}
+\affiliation{%
+    \institution{Purdue University}
+    \country{United States}}
+\email{merzn@purdue.edu}
+
+\author{Patrick Li}
+\affiliation{%
+    \institution{Purdue University}
+    \country{United States}}
+\email{li3992@purdue.edu}
+
+\author{Varun Vora}
+\affiliation{%
+    \institution{Purdue University}
+    \country{United States}}
+\email{vora18@purdue.edu}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Jones, Silkov, Merz, Li, Vora}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+  In this article we propose the application of data-mining techniques on
+  food-recipes. We hope to gain insight into the structure of recipes, and the relationships between ingredients, steps, and nutrients. To gain this insight we will conduct literature review to identify state-of-the-art methods for feature extraction and purchase prediction. We ultimately hope to apply the learned insight to predict missing ingredients and predict properties of a recipe to eventually enable  novel recipe generation.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010147.10010257</concept_id>
+       <concept_desc>Computing methodologies~Machine learning</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Machine learning}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{datasets, CS573, food, recipes, machine learning, analysis, visualization, project, group}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Team Composition}
+Our team is composed of 5 members: Reece Jones, Eli Silkov, Nathan Merz, Patrick Li, and Varun Vora.
+
+\section{Topic}
+We have selected a food recipe dataset to apply our data-mining skills on. This dataset contains a substantial amount of information regarding to the ingredients, steps, nutrition, user reviews, and more of many recipe. This dataset comes courtesy of Kaggle, and can be found at the following link: \url{https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions?select=RAW_recipes.csv}. 
+
+From this dataset, we hope to gain insight into not only what makes a successful recipe, but also what constitutes a reasonable recipe. A better understanding of the relationship between recipes and ingredients is important the development of new recipes and grocers' decision-making. Chefs currently must spend a great deal of time and error experimenting with combinations to develop new recipes and many common dishes are a variant on traditional recipes. Providing a better starting point for the development of new recipes would save chefs time experimenting and provide consumers more food variety. It is also important for new, more environmentally-friendly ingredients such as plant-based meat alternatives that do not have as many traditional recipes. Beyond cooking, understanding recipes is important for grocers as understanding which items are often purchased together (as the ingredients for recipes are) allows them to optimize store placement and advertising.
+
+As such, we will focus on training existing machine learning models on the dataset to learn specific relationships, and incorporate these models into an algorithm to generate novel recipes. However, due to the complexity of language generation, this task is not our explicit goal, and is only to be done if time allows. In contrast, our explicit goal of the project is to build the successful models and necessary data understanding that could be used in the recipe generator.
+
+% From this dataset, we hope to gain insight into not only what makes a successful recipe, but also what constitutes a reasonable recipe. A better understanding of the relationship between recipes and ingredients is important the development of new recipes and grocers' decision-making. Chefs currently must spend a great deal of time and error experimenting with combinations to develop new recipes and many common dishes are a variant on traditional recipes. Providing a better starting point for the development of new recipes would save chefs time experimenting and provide consumers more food variety. It is also important for new, more environmentally-friendly ingredients such as plant-based meat alternatives that do not have as many traditional recipes. Beyond cooking, understanding recipes is important for grocers as understanding which items are often purchased together (as the ingredients for recipes are) allows them to optimize store placement and advertising. %Modify to focus on healthy recipes; might need other rewording/refocus to match final task list
+
+
+\section{Plan of Activities}
+\subsection{Data Analysis}
+Before we attempt to learn any models from the data, it is important that we have a strong understanding of the data. Such an understanding will help us understand key characteristics which we can later utilize when creating our models and delivering on our applied outcomes.
+
+Questions we plan to explore during the exploratory data analysis include:
+
+\begin{enumerate}
+    \item What is the correlation between preparation time and nutritional value?
+    \item What properties of recipes (to be extracted through feature engineering) contribute to nutritional value?
+    \item What ingredients frequently appear together in recipes?
+    \item What actions are recipes steps composed of? Can a step be decomposed into multiple steps?
+\end{enumerate}
+
+As we explore the data, we will likely find unexpected patterns and ask ourselves new questions.
+
+\subsection{Literature Review}
+Our literature review will focus primarily on recommendation systems and natural language processing methodologies for text generation, model training, and feature extraction. We will also review existing grocery purchase prediction work to find information that may be transferable to our domain of work.
+
+%Could we compare against other grocery-store purchase predictions?
+%Probably
+
+\subsection{Models}
+The models we build will ultimately support the practical application of generating novel recipes. Such models required are listed.
+
+\subsubsection{Missing Element Prediction}
+We plan to develop a set of models that can capture information about the association between sets of ingredients and other ingredients or steps. The models will allow us to predict missing information, which we can iteratively apply to generate recipes.
+
+\subsubsection{Recipe Metadata Prediction}
+We plan to develop a set of models that can capture information about the association between a recipe's ingredients and steps, and the recipes metadata. Such metadata includes the recipe name, tags, and rating. The models will allow us to score and describe generated recipes.
+
+% \subsubsection{Ingredient Pairing}
+% We need to train a model that takes some number of ingredients as input, and outputs an ingredient. This model will model the relationships between ingredients within dishes and will allow us to iteratively build an ingredient list which we can then provide as input to other models to produce recipes.
+% \subsubsection{Ingredient-Step Pairing}
+% We need to train a model that takes some number of ingredients as input, and outputs steps to take on the ingredients to form a recipe. This model maps ingredient lists into a workable recipe.
+% \subsubsection{Recipe-Name Pairing}
+% We need to train a model that takes a recipe as input, and outputs a recipe name. This model maps recipes to names that describe the recipes. The result being that we can generate a large set of novel recipes, predict their names, then perform a search over the recipes to find a recipe matching some criteria.
+% \subsubsection{Recipe-Prep-Time Pairing}
+% Is this not the same as Ingredient-Step pairing?
+
+%Key models include:
+%1) Prediction of ingredients from other recipe parts
+%2) Prediction of key verb in step from other recipe parts
+%3) Recipe generation (potentially given a starting ingredient or just random seed); could specifically make this healthy recipe and then eval on nutrition (potentially possible to pair ingredients off to nutrition using fda tables for estimation)
+%4) Closeness of recommended recipes (for task of grouping similar recipes) most likely we subjectively rate the closeness of recipes on a 10 point scale or something, maybe have multiple people do it and average for better result
+
+\subsection{Applied Outcomes}
+%Nathan: I am not sure how much a search problem falls under data mining
+% Varun: This is not really a search problem. It's purely an ML problem if we are trying to predict nutrients from recipes/ingredients.
+\subsubsection{Nutritional Value}
+As the goal of this topic is to understand the relational properties of ingredients and the outputs of recipes, we would like to understand the nutritional value of recipes.
+
+We believe a good model should be able to predict the nutritional value of a dish given its recipe and ingredients.
+
+\subsubsection{Novel Recipe Generation}
+A stretch goal for the project is to demonstrate the application of our models in the generation of the novel recipes. The goal is not simply to achieve high accuracy, but produce meaningful results. However, model training may take longer than expected. Thus, if time permits, we will use the cumulative knowledge of the learned models to generate novel recipes. The desired outcome is to produce convincing and unique recipes.
+
+\subsubsection{Grouping Similar Recipes}
+Another goal of this project is being able to recommend similar recipes from a starting recipe. We will use the relationships discovered in the data analysis phase and the techniques learned during the literature review phase to drive this applied outcome.
+
+
+\section{Plan of Evaluation}
+\subsection{Analysis}
+Our analysis will be successful if we can either disprove our initial assumptions about the relationships present in the dataset, or conclude with a high degree of confidence that these relationships are in fact present. We will also be successful if we are able to find relationships in the data that we did not expect to find at first.
+
+\subsection{Models}
+We will evaluate our models by holding out a test set (approximately 20\% of the data) which will not be used in training or validation. We will then remove the relevant attribute we are trying to predict from each recipe. Finally, we shall evaluate the model's accuracy on predicting the missing attribute of the elements in the test set.
+
+% \subsubsection{Ingredient-Step Pairing}
+% We will evaluate our ingredient-step pairing model by holding out a test set, removing one random step from each recipe, then evaluating the model's performance on the new test set.
+
+% \subsubsection{Recipe-Name Pairing}
+% We will evaluate our ingredient-step pairing model by holding out a test set, then evaluating the model's performance on the test set. During our literature review phase, we will research state-of-the-art methods on such text prediction evaluation.
+
+\subsection{Applied Outcomes}
+We believe that our project will be ultimately successful if we are able to successfully apply our acquired knowledge to at least two of the three applied outcomes we have listed.
+
+\subsubsection{Nutritional Value}
+Predicted nutritional values can be compared with the actual values listed in the data.
+
+\subsubsection{Novel Recipe Generation}
+As stated previously, this is highly subjective and will be treated as an extra. Group members will subjectively rate the recipe, perhaps with multiple rating types such as plausibility or entertainment value.
+
+\subsubsection{Grouping Similar Recipes}
+This is still subjective, but less so than novel recipe generation. Recipes grouped together can be subjectively rated on a scale from 1 to 10 by multiple group members, and the results averaged to reduce bias. This will allow for a pseudo-objective way of measuring effectiveness.
+
+% Evaluation of:
+%1) From held-out recipes, provide it missing-1-random recipes and evaluate accuracy of fill-in
+%2) From held-out recipes, provide it missing-1-step recipes and evaluate accuracy of fill-in (specifically looking for the missing verb; e.x. mix/dice/bake)
+%3) When a generated recipe matches an existing recipe, check the rating. Evaluate based on how rating compares to average of all ratings. Case study a few of the truly novel recipes.
+%4) 
+
+\section{Project Timeline}
+\subsection{Data Analysis}
+We believe this will take between two and four weeks, depending on how complex feature extraction is. This will be done before the midterm report.
+
+\subsection{Literature Review}
+We believe this will take between two and four weeks, depending on how deep we dig into current methodologies. This will be done in parallel with the data analysis and be completed before the midterm report.
+
+\subsection{Models}
+We believe this will take between three and four weeks, depending on how successful our initial approach is. This will be started before the midterm proposal and completed before the final report.
+
+%Nathan: The applied outcomes, in my opinion, are generally the hardest problems. I suspect they will take longer and we should focus on one.
+\subsection{Applied Outcomes}
+We believe each applied outcome will take between one and five weeks, and can be worked on in parallel to each other. Some applied outcomes are contingent on the completion of the models, so we expect the nutritional value and grouping similar recipes to be completed a few weeks after the midterm report, whereas the novel recipe generation may be complete by the final report.
+
+%My(Patrick) rough ideas for how this goes, feel free to change
+%Data analysis: 2 weeks to a month, done before midterm proposal
+%Developing algorithms: 2 weeks to a month, started before midterm proposal ideally and finished with plenty of time left for paper
+%Project Presentation and Report Paper: remaining time
+%
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+Idea consultation: Altug Gemalmaz\\
+Data source: Shuyang Li
+\end{acks}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-base}
+Shuyang Li, “Food.com Recipes and Interactions.” Kaggle, 2019, doi: 10.34740/KAGGLE/DSV/783630.
+%%
+%% If your work has an appendix, this is the place to put it.
+%\appendix
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-authordraft.tex'.
