@@ -6,3 +6,4 @@
   - Uses one of the methods of the above article, but goes more in depth on specific feature engineering aspects, and model selection. I think this will also be useful for some of our text-processing tasks. 
 - Maybe https://link.springer.com/chapter/10.1007/978-3-642-25975-3_8
 - https://dl.acm.org/doi/abs/10.1145/3366424.3383536 this seems to do something very similar to our plan and could be a great resource for the text generation part.
+- https://ieeexplore.ieee.org/abstract/document/9438787 more of the same
