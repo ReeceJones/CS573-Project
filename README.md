@@ -7,3 +7,4 @@
 - Maybe https://link.springer.com/chapter/10.1007/978-3-642-25975-3_8
 - https://dl.acm.org/doi/abs/10.1145/3366424.3383536 this seems to do something very similar to our plan and could be a great resource for the text generation part.
 - https://ieeexplore.ieee.org/abstract/document/9438787 more of the same
+- https://aclanthology.org/D15-1090.pdf brief paper with some ideas of modeling recipes
