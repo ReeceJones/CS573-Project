@@ -1,4 +1,6 @@
 # CS573-Project
+## Overleaf
+The overleaf project is accessible here: https://www.overleaf.com/7666613487rftcrfvbjfxs.
 ## Literature Review
 - https://www.sciencedirect.com/science/article/pii/S1110866515000341
   - Good background on recommendation systems. This will help us guide our search in what we are looking for out of a recommendation system. Luckily, our dataset contains review information so I think it should be easy to use this for recipe recommendation. I think the techniques discussed could also be used as part of a model, or we could incorporate our learned models on it.
