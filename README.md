@@ -10,3 +10,4 @@ The overleaf project is accessible here: https://www.overleaf.com/7666613487rftc
 - https://dl.acm.org/doi/abs/10.1145/3366424.3383536 this seems to do something very similar to our plan and could be a great resource for the text generation part. Better link here: https://arxiv.org/abs/2003.02498
 - https://ieeexplore.ieee.org/abstract/document/9438787 more of the same
 - https://aclanthology.org/D15-1090.pdf brief paper with some ideas of modeling recipes
+- https://researcher.watson.ibm.com/researcher/view_group.php?id=5077
