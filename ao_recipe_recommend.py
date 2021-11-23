@@ -6,16 +6,19 @@ import ast
 # sklearn stuffz
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans, AgglomerativeClustering
+from sklearn.decomposition import PCA
 # nltk stuffz
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 # scipy stuffz
 from scipy import spatial
+# matplotlib stuffz
+import matplotlib.pyplot as plt
 
 def transform(input, ngram_range=(1,1), max_features=200, use_idf=True):
     df = input.copy()
-    df.dropna(inplace=True)
+    df = df.dropna().reset_index(drop=True)
     # make everything lowercase, remove quantities and puncuation
     original_names = df.name.copy(deep=True)
     df.name = df.name.str.lower().replace(r'[^a-z ]', '')
@@ -97,15 +100,55 @@ def cosine_similarity(corpus, source, titles, n=10):
                 closest.sort(key=lambda x: x[1])
                 if len(closest) > n:
                     closest = closest[:n]
-        print('-----')
+        print('----- (cosine similarity)')
         print('source:', titles[idx])
         print('recommendations:')
         for c in closest:
             print(c)
         print('-----')
 
-def kmeans(corpus, source, n=10):
-    pass
+def kmeans(corpus, source, titles, n=10):
+    # make elbow plot
+    K = [2,4,8,16,32,64]
+    scores = list()
+    for k in K:
+        model = KMeans(n_clusters=k)
+        model.fit(corpus)
+        scores.append(model.inertia_)
+    plt.plot(K, scores)
+    plt.title('KMeans Elbow Plot')
+    plt.xlabel('K')
+    plt.ylabel('WC-SSD')
+    plt.show()
+    # K=8 best option
+    model = KMeans(n_clusters=8)
+    Y = model.fit_predict(corpus)
+    print(len(corpus), len(Y))
+    # PCA Plot
+    r = np.random.random_integers(0, len(corpus)-1, size=250)
+    pca = PCA(n_components=2)
+    dd = pca.fit_transform(corpus.iloc[r])
+    plt.scatter(dd[:,0], dd[:,1], c=Y[r])
+    plt.title('PCA Plot w/ K=8')
+    plt.xlabel('Component 1')
+    plt.ylabel('Component 2')
+    plt.colorbar()
+    plt.show()
+    for idx, s in source.iterrows():
+        closest = list() # items within same cluster with lowest distance
+        for idx2, row in corpus.iterrows():
+            d = spatial.distance.euclidean(s, row)
+            if Y[idx]==Y[idx2] and (len(closest) < n or d < closest[-1][1]):
+                closest.append((titles[idx2], d))
+                closest.sort(key=lambda x: x[1])
+                if len(closest) > n:
+                    closest = closest[:n]
+        print('----- (KMeans)')
+        print('source:', titles[idx])
+        print('recommendations:')
+        for c in closest:
+            print(c)
+        print('-----')
 
 def agglomerative(corpus, source, n=10):
     pass
@@ -120,4 +163,5 @@ if __name__=='__main__':
     df.to_csv('nutrition_processed_recipes.csv', index=False)
 
     # Make recommendations
-    cosine_similarity(df, df.sample(n=5), titles)
+    # cosine_similarity(df, df.sample(n=5), titles)
+    kmeans(df, df.sample(n=5), titles)
