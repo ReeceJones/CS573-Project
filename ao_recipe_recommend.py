@@ -163,5 +163,5 @@ if __name__=='__main__':
     df.to_csv('nutrition_processed_recipes.csv', index=False)
 
     # Make recommendations
-    # cosine_similarity(df, df.sample(n=5), titles)
+    cosine_similarity(df, df.sample(n=5), titles)
     kmeans(df, df.sample(n=5), titles)
