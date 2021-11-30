@@ -150,8 +150,57 @@ def kmeans(corpus, source, titles, n=10):
             print(c)
         print('-----')
 
-def agglomerative(corpus, source, n=10):
-    pass
+
+def wcssd(df, assignments):
+    a = df.copy()
+    a['assignment'] = assignments
+
+    return np.sum(a.groupby('assignment').apply(lambda x: np.sum([np.square(np.array(row[row.index != 'assignment']) - x.loc[:,x.columns != 'assignment'].mean()) for idx, row in x.iterrows()])).tolist())
+
+def agglomerative(corpus, source, titles, n=10):
+    K = [2,4,8,16,32,64]
+    scores = list()
+    for k in K:
+        model = AgglomerativeClustering(n_clusters=k)
+        print('A')
+        Y = model.fit_predict(corpus)
+        print('B')
+        scores.append(wcssd(corpus, Y))
+        print(scores)
+    plt.plot(K, scores)
+    plt.title('Agglomerative Clustering Elbow Plot')
+    plt.xlabel('K')
+    plt.ylabel('WC-SSD')
+    plt.show()
+    # K=8 best option
+    model = AgglomerativeClustering(n_clusters=8)
+    Y = model.fit_predict(corpus)
+    print(len(corpus), len(Y))
+    # PCA Plot
+    r = np.random.random_integers(0, len(corpus)-1, size=250)
+    pca = PCA(n_components=2)
+    dd = pca.fit_transform(corpus.iloc[r])
+    plt.scatter(dd[:,0], dd[:,1], c=Y[r])
+    plt.title('PCA Plot w/ K=8')
+    plt.xlabel('Component 1')
+    plt.ylabel('Component 2')
+    plt.colorbar()
+    plt.show()
+    for idx, s in source.iterrows():
+        closest = list() # items within same cluster with lowest distance
+        for idx2, row in corpus.iterrows():
+            d = spatial.distance.euclidean(s, row)
+            if Y[idx]==Y[idx2] and (len(closest) < n or d < closest[-1][1]):
+                closest.append((titles[idx2], d))
+                closest.sort(key=lambda x: x[1])
+                if len(closest) > n:
+                    closest = closest[:n]
+        print('----- (Agglomerative)')
+        print('source:', titles[idx])
+        print('recommendations:')
+        for c in closest:
+            print(c)
+        print('-----')
 
 if __name__=='__main__':
     nltk.download('punkt')
@@ -163,5 +212,7 @@ if __name__=='__main__':
     df.to_csv('nutrition_processed_recipes.csv', index=False)
 
     # Make recommendations
-    cosine_similarity(df, df.sample(n=5), titles)
-    kmeans(df, df.sample(n=5), titles)
+    cosine_similarity(df, df.sample(n=5, random_state=10), titles)
+    kmeans(df, df.sample(n=5, random_state=10), titles)
+    indexes = np.random.random_integers(0, len(df)-1, 1000)
+    agglomerative(df.loc[indexes,:].reset_index(drop=True), df.loc[indexes,:].reset_index(drop=True).sample(n=5, random_state=10), titles[indexes].reset_index(drop=True))
