@@ -1,6 +1,8 @@
 # CS573-Project
 ## Overleaf
 The overleaf project is accessible here: https://www.overleaf.com/7666613487rftcrfvbjfxs.
+## Dataset
+The dataset for the project is accessible here: https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions
 ## Slides
 The slide deck for the final project presentation is accessible here: https://docs.google.com/presentation/d/14hQ1djJd8atsg_XMwTn6hrTL24UubTJDrwCdPIEI5Ks/edit?usp=sharing.
 ## Literature Review
